@@ -5,7 +5,10 @@ import joblib
 import numpy as np
 
 from flask import Flask, request, jsonify, render_template_string
-from config import VECTORIZER_PATH, NB_MODEL_PATH, SVM_MODEL_PATH
+try:
+    from config import VECTORIZER_PATH, NB_MODEL_PATH, SVM_MODEL_PATH
+except ImportError:
+    from fake_news_classifier.config import VECTORIZER_PATH, NB_MODEL_PATH, SVM_MODEL_PATH
 
 from sklearn.feature_extraction.text import ENGLISH_STOP_WORDS
 STOP_WORDS = set(ENGLISH_STOP_WORDS)
@@ -244,4 +247,6 @@ def predict():
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000, debug=True)
+    port = int(os.environ.get('PORT', 7860))
+    debug_mode = os.environ.get('FLASK_DEBUG', 'False').lower() in ('true', '1')
+    app.run(host='0.0.0.0', port=port, debug=debug_mode)

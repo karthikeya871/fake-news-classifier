@@ -58,9 +58,11 @@ def main():
 
 
     os.makedirs(MODEL_DIR, exist_ok=True)
-    joblib.dump(vectorizer, VECTORIZER_PATH,compress=3)
-    joblib.dump(nb_model, NB_MODEL_PATH,compress=3)
-    joblib.dump(svm_model, SVM_MODEL_PATH,compress=3)
+    # Strip unnecessary 3.5M+ stop words to keep model size under 100KB and RAM under 40MB
+    vectorizer.stop_words_ = set()
+    joblib.dump(vectorizer, VECTORIZER_PATH, compress=9)
+    joblib.dump(nb_model, NB_MODEL_PATH, compress=9)
+    joblib.dump(svm_model, SVM_MODEL_PATH, compress=9)
     print("\n[SUCCESS] Pipeline executed successfully. Trained models saved in 'models/' directory.")
 
 if __name__ == "__main__":

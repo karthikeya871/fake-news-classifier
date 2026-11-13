@@ -1,0 +1,11 @@
+.venv/
+.idea/
+.git/
+fake_news_classifier/data/
+**/data/
+**/*.csv
+__pycache__/
+**/__pycache__/
+*.pyc
+**/*.pyc
+fake_news_classifier/heatmap.png

@@ -1,0 +1,8 @@
+.venv
+.idea
+.git
+data/
+*.csv
+__pycache__
+*.pyc
+heatmap.png

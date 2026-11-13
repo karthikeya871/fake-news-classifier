@@ -1,0 +1,25 @@
+# Python virtual environment
+.venv/
+env/
+venv/
+
+# PyCache & compiled bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+**/__pycache__/
+
+# IDEs
+.idea/
+.vscode/
+
+# Large datasets (CSV files should not be uploaded to GitHub / deployments)
+data/
+*.csv
+fake_news_classifier/data/
+fake_news_classifier/data/*.csv
+
+# Media & temporary files
+fake_news_classifier/heatmap.png
+heatmap.png
+*.log
