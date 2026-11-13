@@ -58,9 +58,9 @@ def main():
 
 
     os.makedirs(MODEL_DIR, exist_ok=True)
-    joblib.dump(vectorizer, VECTORIZER_PATH)
-    joblib.dump(nb_model, NB_MODEL_PATH)
-    joblib.dump(svm_model, SVM_MODEL_PATH)
+    joblib.dump(vectorizer, VECTORIZER_PATH,compress=3)
+    joblib.dump(nb_model, NB_MODEL_PATH,compress=3)
+    joblib.dump(svm_model, SVM_MODEL_PATH,compress=3)
     print("\n[SUCCESS] Pipeline executed successfully. Trained models saved in 'models/' directory.")
 
 if __name__ == "__main__":

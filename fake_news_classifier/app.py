@@ -3,8 +3,7 @@ import re
 import string
 import joblib
 import numpy as np
-import nltk
-from nltk.corpus import stopwords
+
 from flask import Flask, request, jsonify, render_template_string
 from config import VECTORIZER_PATH, NB_MODEL_PATH, SVM_MODEL_PATH
 
