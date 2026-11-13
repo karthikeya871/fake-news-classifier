@@ -1,7 +1,5 @@
 numpy
 scikit-learn
-nltk
 flask
 gunicorn
-nltk
 joblib
