@@ -1,14 +1,7 @@
-pandas
 numpy
-scikit-learn
+scikit-learn==1.3.2
 nltk
-matplotlib
-seaborn
-joblib
 flask
 gunicorn
-pandas
-numpy
-scikit-learn
 nltk
 joblib
