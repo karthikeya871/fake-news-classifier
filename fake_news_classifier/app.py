@@ -8,9 +8,8 @@ from nltk.corpus import stopwords
 from flask import Flask, request, jsonify, render_template_string
 from config import VECTORIZER_PATH, NB_MODEL_PATH, SVM_MODEL_PATH
 
-nltk.download('stopwords', quiet=True)
-STOP_WORDS = set(stopwords.words('english'))
-
+from sklearn.feature_extraction.text import ENGLISH_STOP_WORDS
+STOP_WORDS = set(ENGLISH_STOP_WORDS)
 app = Flask(__name__)
 
 # Load saved vectorizer and models
